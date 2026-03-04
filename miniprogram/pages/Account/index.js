@@ -28,6 +28,10 @@ Page({
             })
         })
     },
+
+    toPhotoGallery() {
+      wx.switchTab({ url: '/pages/PhotoGallery/index' })
+    },
   
     //转到物品详情
     async toDetailPage(element, isUpper) {

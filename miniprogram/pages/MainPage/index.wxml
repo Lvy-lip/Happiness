@@ -9,19 +9,88 @@
       <swiper-item><image src="Images/HomeCover06.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
   </swiper>
 
-<view class="form-group_label">💰 积分榜</view>
-    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
-    <view class="form-cell">
-        <view class="slide">
-        <view class="title">{{userA}}的积分：{{creditA}}</view>
-        </view>
+  <view class="growth-card" bindtap="goGrowthDetail">
+    <view class="growth-header">
+      <view class="growth-title-wrap">
+        <text class="growth-title-icon">📊</text>
+        <text class="growth-title">成长分析</text>
+      </view>
+      <view class="growth-action" catchtap="goGrowthDetail">
+        <text class="growth-action-text">查看更多 &gt;</text>
+      </view>
     </view>
-    <view class="form-cell">
-        <view class="slide">
-        <view class="title">{{userB}}的积分：{{creditB}}</view>
-        </view>
+
+    <view class="growth-tabs">
+      <view
+        wx:for="{{periodTabs}}"
+        wx:key="value"
+        class="growth-pill {{period === item.value ? 'growth-pill-active' : ''}}"
+        data-value="{{item.value}}"
+        catchtap="onPeriodChange"
+      >
+        {{item.label}}
+      </view>
     </view>
-</view>
+
+    <view class="growth-summary">
+      <view class="growth-user-row">
+        <text class="growth-user-name">{{growthView.userAName}}</text>
+        <text class="growth-user-points">积分 +{{growthView.userAPoints}}</text>
+      </view>
+      <view class="growth-divider"></view>
+      <view class="growth-user-row">
+        <text class="growth-user-name">{{growthView.userBName}}</text>
+        <text wx:if="{{growthView.hasCompareUser}}" class="growth-user-points">积分 +{{growthView.userBPoints}}</text>
+        <text wx:else class="growth-user-muted">未选择对比用户</text>
+      </view>
+    </view>
+
+    <view class="growth-compare">
+      <text class="growth-compare-title">进步对比（{{periodLabel}}）</text>
+      <text class="growth-leader">{{growthView.leaderText}}</text>
+
+      <view wx:if="{{!growthView.hasCompareUser}}" class="growth-empty-inline">
+        <text class="growth-empty-text">添加对比用户后可查看占比对比</text>
+        <view class="growth-select-btn" catchtap="onSelectCompareUser">选择对比用户</view>
+      </view>
+
+      <view wx:else>
+        <view class="growth-bar-wrap">
+          <view class="growth-bar-track">
+            <view class="growth-bar-a" style="width: {{growthView.bar.aPctStr}};"></view>
+            <view class="growth-bar-b" style="width: {{growthView.bar.bPctStr}};"></view>
+          </view>
+          <text wx:if="{{growthView.noData}}" class="growth-bar-empty">暂无记录</text>
+        </view>
+
+        <view class="growth-legend">
+          <view class="growth-legend-item">
+            <view class="growth-dot growth-dot-a"></view>
+            <text class="growth-legend-text">{{growthView.userAName}} {{growthView.userAPoints}}分</text>
+          </view>
+          <view class="growth-legend-item">
+            <view class="growth-dot growth-dot-b"></view>
+            <text class="growth-legend-text">{{growthView.userBName}} {{growthView.userBPoints}}分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home-entry-row">
+    <view class="home-entry-card" bindtap="goPhotoGallery">
+      <text class="home-entry-icon">📷</text>
+      <text class="home-entry-text">回忆馆</text>
+    </view>
+    <view class="home-entry-card" bindtap="goMissionCenter">
+      <text class="home-entry-icon">✅</text>
+      <text class="home-entry-text">任务中心</text>
+    </view>
+    <view class="home-entry-card" bindtap="goMarketPage">
+      <text class="home-entry-icon">🛍️</text>
+      <text class="home-entry-text">积分商城</text>
+    </view>
+  </view>
 
 <view class="form-group_label">🐻 欢迎回来</view>
   <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">

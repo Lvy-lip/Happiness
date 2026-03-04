@@ -1,0 +1,38 @@
+.review-page {
+  min-height: 100vh;
+  background: #f6f7f9;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.review-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+}
+
+.review-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #22242a;
+}
+
+.review-subtitle {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #7c8491;
+}
+
+.review-action {
+  margin-top: 14px;
+  height: 36px;
+  border-radius: 18px;
+  border: 1px solid #d8dde6;
+  color: #4c5460;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

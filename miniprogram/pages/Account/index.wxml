@@ -7,6 +7,15 @@
 </view>
 
 <view class="container" wx:if="{{allItems.length > 0}}">
+    <view class="gallery-entry" bindtap="toPhotoGallery">
+      <text class="gallery-entry-icon">📷</text>
+      <view class="gallery-entry-texts">
+        <text class="gallery-entry-title">回忆馆</text>
+        <text class="gallery-entry-sub">收藏你们的美好瞬间</text>
+      </view>
+      <text class="gallery-entry-arrow">进入</text>
+    </view>
+
     <view class="form-group"><view class="search-bar">
         <icon class="search-icon" type="search" size="24"></icon>
         <input class="search-input" placeholder="搜索物品" bindinput="onSearch" value="{{search}}" />

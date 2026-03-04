@@ -1,0 +1,58 @@
+.settings-page {
+  min-height: 100vh;
+  background: #f6f7f9;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.settings-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+}
+
+.settings-title {
+  font-size: 18px;
+  color: #22242a;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.settings-row {
+  min-height: 44px;
+  border-bottom: 1px solid #eef1f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #4a5260;
+  font-size: 14px;
+}
+
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+.settings-value {
+  color: #8b93a0;
+  font-size: 13px;
+}
+
+.settings-right {
+  display: flex;
+  align-items: center;
+}
+
+.settings-arrow {
+  margin-left: 8px;
+  color: #b2b8c2;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.settings-hint {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #98a0ac;
+}

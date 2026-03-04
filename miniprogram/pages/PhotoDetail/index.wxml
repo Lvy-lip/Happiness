@@ -1,0 +1,37 @@
+<view class="detail-page">
+  <view class="detail-card" wx:if="{{photo}}">
+    <image class="detail-photo" src="{{photo.image}}" mode="aspectFill" />
+    <view class="detail-info">
+      <text class="detail-date">{{photo.dateLabel}}</text>
+      <text wx:if="{{!isEditing}}" class="detail-location">📍 {{photo.location}}</text>
+      <input wx:if="{{isEditing}}" class="detail-input" value="{{editForm.location}}" placeholder="地点" bindinput="onLocationInput" />
+
+      <text wx:if="{{!isEditing}}" class="detail-caption">{{photo.caption}}</text>
+      <textarea wx:if="{{isEditing}}" class="detail-textarea" value="{{editForm.caption}}" maxlength="80" placeholder="回忆文案" bindinput="onCaptionInput" />
+
+      <view class="detail-reaction">
+        <text class="detail-like">❤️ {{photo.likes}}</text>
+        <view class="detail-tags">
+          <text wx:for="{{photo.tags}}" wx:key="*this" class="detail-tag">{{item}}</text>
+        </view>
+      </view>
+      <view class="detail-comments">
+        <text class="comments-title">回忆注记</text>
+        <text wx:if="{{!isEditing}}" class="comments-text">{{photo.comments}}</text>
+        <textarea wx:if="{{isEditing}}" class="detail-textarea" value="{{editForm.comments}}" maxlength="200" placeholder="记录这张照片背后的回忆" bindinput="onCommentsInput" />
+      </view>
+
+      <view class="detail-actions">
+        <view wx:if="{{!isEditing}}" class="action-btn action-edit" bindtap="startEdit">编辑备注</view>
+        <view wx:if="{{!isEditing}}" class="action-btn action-delete" bindtap="deletePhoto">删除图片</view>
+        <view wx:if="{{isEditing}}" class="action-btn action-cancel" bindtap="cancelEdit">取消</view>
+        <view wx:if="{{isEditing}}" class="action-btn action-save" bindtap="saveEdit">保存</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else class="detail-empty">
+    <text class="detail-empty-title">未找到该回忆</text>
+    <text class="detail-empty-sub">请返回回忆馆重新选择照片。</text>
+  </view>
+</view>

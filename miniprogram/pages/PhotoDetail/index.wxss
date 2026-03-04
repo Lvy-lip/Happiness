@@ -1,0 +1,173 @@
+.detail-page {
+  min-height: 100vh;
+  background: #f7f7f7;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.detail-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.detail-photo {
+  width: 100%;
+  height: 320px;
+  display: block;
+}
+
+.detail-info {
+  padding: 16px;
+}
+
+.detail-date {
+  font-size: 14px;
+  color: #8a92a0;
+  line-height: 20px;
+}
+
+.detail-location {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #656d7a;
+}
+
+.detail-input {
+  margin-top: 8px;
+  height: 36px;
+  border-radius: 10px;
+  background: #f5f7fa;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: #3a404a;
+}
+
+.detail-caption {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #232830;
+  font-weight: 500;
+}
+
+.detail-reaction {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-like {
+  font-size: 14px;
+  color: #f58fa0;
+  font-weight: 600;
+}
+
+.detail-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.detail-tag {
+  margin-left: 6px;
+  margin-bottom: 4px;
+  padding: 0 10px;
+  height: 22px;
+  line-height: 22px;
+  border-radius: 20px;
+  font-size: 11px;
+  color: #6d7481;
+  background: #f1f3f7;
+}
+
+.detail-comments {
+  margin-top: 14px;
+  border-radius: 12px;
+  background: #f8f9fb;
+  padding: 12px;
+}
+
+.comments-title {
+  display: block;
+  font-size: 12px;
+  color: #8b92a0;
+}
+
+.comments-text {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 21px;
+  color: #464d59;
+}
+
+.detail-textarea {
+  margin-top: 8px;
+  width: 100%;
+  min-height: 78px;
+  border-radius: 10px;
+  background: #f5f7fa;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #444b57;
+}
+
+.detail-actions {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action-btn {
+  width: calc((100% - 12px) / 2);
+  height: 36px;
+  border-radius: 18px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-edit,
+.action-save {
+  background: #f58fa0;
+  color: #ffffff;
+}
+
+.action-delete {
+  background: #fdecef;
+  color: #d06d83;
+}
+
+.action-cancel {
+  background: #eff2f6;
+  color: #6b7280;
+}
+
+.detail-empty {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 28px 16px;
+  text-align: center;
+}
+
+.detail-empty-title {
+  font-size: 16px;
+  color: #292d35;
+  font-weight: 600;
+}
+
+.detail-empty-sub {
+  margin-top: 8px;
+  display: block;
+  font-size: 12px;
+  color: #8f97a2;
+}

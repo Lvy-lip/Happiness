@@ -1,0 +1,36 @@
+<view class="growth-detail-page">
+  <view class="summary-card">
+    <view class="summary-title">成长分析详情</view>
+    <view class="summary-subtitle">当前时间维度：{{periodLabel}}</view>
+
+    <view class="user-row">
+      <text class="user-name">{{userAName}}</text>
+      <text class="user-points">{{userAPoints}} 分</text>
+    </view>
+    <view class="user-row">
+      <text class="user-name">{{userBName}}</text>
+      <text class="user-points">{{userBPoints}} 分</text>
+    </view>
+
+    <view class="leader-box">{{leaderText}}</view>
+
+    <view class="bar-wrap">
+      <view class="bar-track">
+        <view class="bar-a" style="width: {{aPctStr}};"></view>
+        <view class="bar-b" style="width: {{bPctStr}};"></view>
+      </view>
+      <text wx:if="{{noData}}" class="bar-empty">暂无记录</text>
+    </view>
+
+    <view class="legend-row">
+      <view class="legend-item">
+        <view class="dot dot-a"></view>
+        <text class="legend-text">{{userAName}} {{userAPoints}}分</text>
+      </view>
+      <view class="legend-item">
+        <view class="dot dot-b"></view>
+        <text class="legend-text">{{userBName}} {{userBPoints}}分</text>
+      </view>
+    </view>
+  </view>
+</view>

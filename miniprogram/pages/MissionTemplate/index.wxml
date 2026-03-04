@@ -1,0 +1,7 @@
+<view class="template-page">
+  <view class="template-card">
+    <view class="template-title">计划模板</view>
+    <view class="template-subtitle">这里可放置常用任务模板，快速生成一组任务。</view>
+    <view class="template-action" bindtap="goMissionAdd">去新建任务</view>
+  </view>
+</view>

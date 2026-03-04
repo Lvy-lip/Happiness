@@ -2,6 +2,20 @@
   padding: 0;
 }
 
+.form-group_label {
+  margin: 12px 16px 0;
+  font-size: 14px;
+  color: #2f2f33;
+  font-weight: 600;
+}
+
+.form-group {
+  margin: 8px 16px 12px;
+  border-radius: 16px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
 .slide {
   display: flex;
   align-items: center;
@@ -21,4 +35,258 @@
   background-color: darkgray;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.growth-card {
+  margin: 12px 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.growth-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.growth-title-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.growth-title-icon {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.growth-title {
+  margin-left: 6px;
+  font-size: 17px;
+  line-height: 24px;
+  color: #1f1f23;
+  font-weight: 600;
+}
+
+.growth-action-text {
+  font-size: 13px;
+  color: #8a8f99;
+}
+
+.growth-tabs {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.growth-pill {
+  height: 30px;
+  padding: 0 12px;
+  margin-right: 8px;
+  border-radius: 15px;
+  border: 1px solid #dadde3;
+  background: #ffffff;
+  color: #5a5f69;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+}
+
+.growth-pill:last-child {
+  margin-right: 0;
+}
+
+.growth-pill-active {
+  background: #22242a;
+  border-color: #22242a;
+  color: #ffffff;
+}
+
+.growth-summary {
+  margin-top: 12px;
+  border-radius: 12px;
+  background: #fafbfc;
+  padding: 10px 12px;
+}
+
+.growth-user-row {
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.growth-user-name {
+  max-width: 120px;
+  font-size: 14px;
+  color: #2f3239;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.growth-user-points {
+  font-size: 15px;
+  color: #1f1f23;
+  font-weight: 600;
+}
+
+.growth-user-muted {
+  font-size: 12px;
+  color: #9aa0aa;
+}
+
+.growth-divider {
+  height: 1px;
+  background: #eceff3;
+  margin: 8px 0;
+}
+
+.growth-compare {
+  margin-top: 12px;
+}
+
+.growth-compare-title {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2a2d33;
+  font-weight: 600;
+}
+
+.growth-leader {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #646b76;
+}
+
+.growth-empty-inline {
+  margin-top: 10px;
+  min-height: 64px;
+  border-radius: 10px;
+  background: #f5f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.growth-empty-text {
+  font-size: 12px;
+  color: #8f96a1;
+}
+
+.growth-select-btn {
+  min-width: 86px;
+  height: 30px;
+  border-radius: 15px;
+  background: #22242a;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.growth-bar-wrap {
+  margin-top: 10px;
+}
+
+.growth-bar-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 6px;
+  background: #edf0f4;
+  overflow: hidden;
+  display: flex;
+}
+
+.growth-bar-a {
+  height: 100%;
+  background: linear-gradient(90deg, #ff9cbc 0%, #ff7ba3 100%);
+  transition: width 0.18s ease-out;
+}
+
+.growth-bar-b {
+  height: 100%;
+  background: linear-gradient(90deg, #8ca7ff 0%, #9c8eff 100%);
+  transition: width 0.18s ease-out;
+}
+
+.growth-bar-empty {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #9aa0aa;
+}
+
+.growth-legend {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.growth-legend-item {
+  margin-right: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.growth-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.growth-dot-a {
+  background: #ff8eb1;
+}
+
+.growth-dot-b {
+  background: #9398ff;
+}
+
+.growth-legend-text {
+  font-size: 12px;
+  color: #5f6671;
+}
+
+.home-entry-row {
+  margin: 0 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-entry-card {
+  width: calc((100% - 16px) / 3);
+  height: 72px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-entry-icon {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.home-entry-text {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #4f5662;
 }

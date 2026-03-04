@@ -1,9 +1,17 @@
 {
   "pages": [
     "pages/MainPage/index",
+    "pages/GrowthDetail/index",
+    "pages/PhotoGallery/index",
+    "pages/PhotoDetail/index",
+    "pages/PhotoMemoryAdd/index",
     "pages/Mission/index",
     "pages/MissionAdd/index",
     "pages/MissionDetail/index",
+    "pages/MissionTemplate/index",
+    "pages/MissionReview/index",
+    "pages/MissionMore/index",
+    "pages/MissionSettings/index",
     "pages/Market/index",
     "pages/MarketAdd/index",
     "pages/MarketDetail/index",
@@ -35,6 +43,11 @@
       "selectedIconPath": "images/TabBar/MarketIconColor.jpg",
       "iconPath": "images/TabBar/MarketIconGrey.jpg",
       "text": "商城"
+    },{
+      "pagePath": "pages/PhotoGallery/index",
+      "selectedIconPath": "images/TabBar/AccountIconColor.jpg",
+      "iconPath": "images/TabBar/AccountIconGrey.jpg",
+      "text": "回忆馆"
     },{
       "pagePath": "pages/Account/index",
       "selectedIconPath": "images/TabBar/AccountIconColor.jpg",

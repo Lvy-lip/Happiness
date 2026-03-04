@@ -1,0 +1,9 @@
+<view class="more-page">
+  <view class="more-card">
+    <view class="more-title">更多功能</view>
+    <view class="more-item" bindtap="goTemplate">计划模板</view>
+    <view class="more-item" bindtap="goReview">今日复盘</view>
+    <view class="more-item" bindtap="goGallery">回忆馆</view>
+    <view class="more-item" bindtap="goSettings">任务设置</view>
+  </view>
+</view>

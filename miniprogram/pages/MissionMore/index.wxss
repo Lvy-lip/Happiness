@@ -1,0 +1,33 @@
+.more-page {
+  min-height: 100vh;
+  background: #f6f7f9;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.more-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+}
+
+.more-title {
+  font-size: 18px;
+  color: #22242a;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.more-item {
+  height: 44px;
+  border-bottom: 1px solid #eef1f5;
+  display: flex;
+  align-items: center;
+  color: #4a5260;
+  font-size: 14px;
+}
+
+.more-item:last-child {
+  border-bottom: none;
+}

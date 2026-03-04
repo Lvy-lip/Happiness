@@ -1,72 +1,147 @@
-<wxs module="util" src="../util.wxs" />
-
-<view class="container white" wx:if="{{allMissions.length === 0}}">
-  <image class="background" src="Images/None.png" mode="aspectFit" />
-  <view class="title">暂无任务</view>
-  <view class="subtitle">好像什么任务也没有...</view>
-</view>
-
-<swiper wx:if="{{allMissions.length > 0}}" indicator-dots="true" autoplay="true" interval="2000" duration="500" 
-style="height: 200px; width: 100%; background: white; ">
-      <swiper-item><image src="Images/MissionCover01.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
-      <swiper-item><image src="Images/MissionCover02.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
-      <swiper-item><image src="Images/MissionCover03.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
-</swiper>
-
-<view class="container" wx:if="{{allMissions.length > 0}}">
-  <view class="form-group"><view class="search-bar">
-    <icon class="search-icon" type="search" size="24"></icon>
-    <input class="search-input" placeholder="搜索任务" bindinput="onSearch" value="{{search}}" />
-  </view></view>
-
-  <view class="form-group_label">未完成<mp-badge content="{{unfinishedMissions.length}}" style="margin-left: 5px;" /></view>
-  <view class="form-group" wx:if="{{unfinishedMissions.length > 0}}" 
-  style="z-index: 0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
-    <view class="form-cell" wx:for="{{unfinishedMissions}}" wx:key="index">
-      <mp-slideview buttons="{{slideButtons}}" data-index='{{index}}' icon="{{true}}" bindbuttontap="slideButtonTapUpper">
-        <view class="slide" data-index="{{index}}" bindtap="toDetailPageUpper">
-          <view class="mission-info">
-            <view class="mission-info_title">{{util.filterStr(item.title, 10)}}</view>
-            <view class="mission-info_award">💰 {{util.filterStr(item.credit, 10)}} 积分</view>
-            <view class="mission-info_date">📅 {{util.cutStr(item.date, 10)}} 创建</view>
-          </view>
-          <view class="mission-info_author">
-            <image style="position: absolute; width: 100%; bottom: 0;" wx:if="{{item._openid === _openidA}}" mode="widthFix" src="Images/MissionA.png"/>
-            <image style="position: absolute; width: 100%; bottom: 0;" wx:if="{{item._openid === _openidB}}" mode="widthFix" src="Images/MissionB.png"/>
-          </view>
-          <image wx:if="{{item.star}}" class="star" src="Images/Star.png" />
-        </view>
-      </mp-slideview>
+<view class="mission-page">
+  <view class="top-nav">
+    <view class="top-nav-title">成长打卡中心</view>
+    <view class="top-nav-actions">
+      <text class="top-nav-action" bindtap="onMoreTap">更多</text>
+      <text class="top-nav-action" bindtap="onSettingsTap">设置</text>
     </view>
   </view>
 
-  <view class="form-group_label">已完成<mp-badge content="{{finishedMissions.length}}" style="margin-left: 5px;" /></view>
-  <view class="form-group" wx:if="{{finishedMissions.length > 0}}" 
-  style="z-index: 0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
-    <view class="form-cell" wx:for="{{finishedMissions}}" wx:key="index">
-      <mp-slideview buttons="{{slideButtons}}" data-index='{{index}}' icon="{{true}}" bindbuttontap="slideButtonTapLower">
-        <view class="slide" data-index="{{index}}" bindtap="toDetailPageLower">
-          <view class="mission-info">
-            <view class="mission-info_title">{{util.filterStr(item.title, 10)}}</view>
-            <view class="mission-info_award">💰 {{util.filterStr(item.credit, 10)}} 积分</view>
-            <view class="mission-info_date">📅 {{util.cutStr(item.date, 10)}} 创建</view>
-          </view>
-          <view class="mission-info_author">
-              <image style="position: absolute; width:100%; bottom: 0;" wx:if="{{item._openid === _openidA}}" mode="widthFix" src="Images/MissionA.png"/>
-              <image style="position: absolute; width:100%; bottom: 0;" wx:if="{{item._openid === _openidB}}" mode="widthFix" src="Images/MissionB.png"/>
-          </view>
-          <image wx:if="{{item.star}}" class="star" src="Images/Star.png" />
+  <view class="dashboard-card">
+    <view class="dashboard-ring-wrap">
+      <view class="dashboard-ring">
+        <view class="dashboard-ring-inner">
+          <text class="dashboard-ring-value">{{dashboard.completeRate}}%</text>
+          <text class="dashboard-ring-label">完成率</text>
         </view>
-      </mp-slideview>
+      </view>
+    </view>
+    <view class="dashboard-stats">
+      <view class="stat-item">
+        <text class="stat-label">今日完成</text>
+        <text class="stat-value">{{dashboard.todayFinished}}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">今日积分</text>
+        <text class="stat-value">+{{dashboard.todayPoints}}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">连续打卡</text>
+        <text class="stat-value">{{dashboard.streakDays}}天</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">预计剩余</text>
+        <text class="stat-value">{{dashboard.remainMinutes}}m</text>
+      </view>
     </view>
   </view>
-</view>
 
-<movable-area style="pointer-events: none; position: fixed; width: 100%; height: 100%;">
-  <movable-view style="pointer-events: auto; width: 20%; height: 20%;" x="{{screenWidth}}" y="{{screenHeight}}" direction="all">
-    <button class="btn-normal" hover-class="btn-hover" size="mini" bindtap="toAddPage" 
-    style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-      <image style = "margin-top: 10px; height: 100%; width: 100%;" mode="widthFix" src="Images/Plus.png"/>任务
-    </button>
-  </movable-view>
-</movable-area>
+  <view class="quick-actions">
+    <view class="quick-action-card" data-action="new" bindtap="onQuickActionTap">
+      <text class="quick-action-icon">➕</text>
+      <text class="quick-action-text">新建任务</text>
+    </view>
+    <view class="quick-action-card" data-action="template" bindtap="onQuickActionTap">
+      <text class="quick-action-icon">🧩</text>
+      <text class="quick-action-text">计划模板</text>
+    </view>
+    <view class="quick-action-card" data-action="review" bindtap="onQuickActionTap">
+      <text class="quick-action-icon">📝</text>
+      <text class="quick-action-text">今日复盘</text>
+    </view>
+    <view class="quick-action-card" data-action="gallery" bindtap="onQuickActionTap">
+      <text class="quick-action-icon">📷</text>
+      <text class="quick-action-text">回忆馆</text>
+    </view>
+  </view>
+
+  <view class="filter-card">
+    <scroll-view class="filter-scroll" scroll-x="true" show-scrollbar="false">
+      <view class="filter-row">
+        <view
+          wx:for="{{filterOptions}}"
+          wx:key="key"
+          class="filter-pill {{activeFilter === item.key ? 'filter-pill-active' : ''}}"
+          data-key="{{item.key}}"
+          bindtap="onFilterChange"
+        >
+          {{item.label}}
+        </view>
+      </view>
+    </scroll-view>
+    <scroll-view class="filter-scroll" scroll-x="true" show-scrollbar="false">
+      <view class="filter-row">
+        <view
+          wx:for="{{sortOptions}}"
+          wx:key="key"
+          class="filter-pill {{activeSort === item.key ? 'filter-pill-active' : ''}}"
+          data-key="{{item.key}}"
+          bindtap="onSortChange"
+        >
+          {{item.label}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view wx:if="{{allMissions.length === 0}}" class="empty-state-card">
+    <image class="empty-image" src="Images/None.png" mode="aspectFit" />
+    <text class="empty-title">暂无任务</text>
+    <text class="empty-subtitle">点击右下角开始创建你的第一条任务</text>
+  </view>
+
+  <view class="task-sections" wx:if="{{allMissions.length > 0}}">
+    <view class="task-section" wx:for="{{sectionList}}" wx:key="key" wx:for-item="section">
+      <view class="section-header" data-key="{{section.key}}" bindtap="toggleSection">
+        <view class="section-title-wrap">
+          <text class="section-title">{{section.title}}</text>
+          <text class="section-count">{{section.count}}</text>
+        </view>
+        <text class="section-fold">{{section.collapsed ? '展开' : '收起'}}</text>
+      </view>
+
+      <view wx:if="{{!section.collapsed}}">
+        <view wx:if="{{section.tasks.length === 0}}" class="section-empty">当前筛选下暂无任务</view>
+
+        <view
+          wx:for="{{section.tasks}}"
+          wx:key="_id"
+          wx:for-item="task"
+          wx:for-index="taskIndex"
+          class="task-card {{task.available ? '' : 'task-card-completed'}}"
+          data-id="{{task._id}}"
+          bindtap="toDetailById"
+        >
+          <view class="task-left">
+            <view class="task-title">{{task.title}}</view>
+            <view class="task-desc">{{task.desc}}</view>
+            <view class="task-meta-row">
+              <text class="task-tag">{{task.timeTag}}</text>
+              <text class="task-tag">{{task.typeTag}}</text>
+              <text class="task-tag">{{task.priorityTag}}</text>
+            </view>
+            <view class="task-reward-row">
+              <text class="task-reward">+{{task.credit}} 积分</text>
+            </view>
+          </view>
+
+          <view class="task-right" catchtap="noop">
+            <view
+              class="task-complete-btn {{task.available ? '' : 'task-complete-btn-done'}}"
+              data-id="{{task._id}}"
+              bindtap="onTaskCompleteTap"
+            >
+              {{task.available ? '✓' : '已'}}
+            </view>
+            <view class="task-side-actions">
+              <text class="task-side-action" data-id="{{task._id}}" bindtap="onToggleStar">星标</text>
+              <text class="task-side-action task-side-action-remove" data-id="{{task._id}}" bindtap="onDeleteTask">删除</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="fab" bindtap="onFabTap">+</view>
+</view>

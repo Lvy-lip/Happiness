@@ -101,3 +101,42 @@
     position: absolute;
     margin: 2px;
   }
+
+  .gallery-entry {
+    margin: 0 16px 12px;
+    padding: 12px;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+  }
+
+  .gallery-entry-icon {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .gallery-entry-texts {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .gallery-entry-title {
+    font-size: 14px;
+    color: #2c3037;
+    font-weight: 600;
+  }
+
+  .gallery-entry-sub {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #8a92a0;
+  }
+
+  .gallery-entry-arrow {
+    font-size: 12px;
+    color: #f58fa0;
+  }

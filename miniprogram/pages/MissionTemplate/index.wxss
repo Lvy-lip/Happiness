@@ -1,0 +1,38 @@
+.template-page {
+  min-height: 100vh;
+  background: #f6f7f9;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.template-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+}
+
+.template-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #22242a;
+}
+
+.template-subtitle {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #7c8491;
+}
+
+.template-action {
+  margin-top: 14px;
+  height: 36px;
+  border-radius: 18px;
+  background: #22242a;
+  color: #ffffff;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

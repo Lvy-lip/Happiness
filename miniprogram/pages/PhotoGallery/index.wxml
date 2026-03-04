@@ -1,0 +1,107 @@
+<view class="photo-page">
+  <view class="top-header">
+    <view class="header-title-wrap">
+      <text class="header-title">美好时光</text>
+      <text class="header-subtitle">我们的回忆相册</text>
+    </view>
+    <view class="header-actions">
+      <text class="header-action" bindtap="onHeaderAdd">添加</text>
+      <text class="header-action" bindtap="onHeaderMore">更多</text>
+    </view>
+  </view>
+
+  <view class="memory-card" wx:if="{{memoryHighlight}}" bindtap="toDetail" data-id="{{memoryHighlight.id}}">
+    <image class="memory-photo" src="{{memoryHighlight.image}}" mode="aspectFill" />
+    <view class="memory-info">
+      <text class="memory-date">{{memoryHighlight.yearLabel}} · {{memoryHighlight.location}}</text>
+      <text class="memory-caption">{{memoryHighlight.caption}}</text>
+    </view>
+  </view>
+
+  <scroll-view class="tabs-scroll" scroll-x="true" show-scrollbar="false">
+    <view class="tabs-row">
+      <view
+        wx:for="{{tabs}}"
+        wx:key="key"
+        class="tab-pill {{activeTab === item.key ? 'tab-pill-active' : ''}}"
+        data-key="{{item.key}}"
+        bindtap="onTabChange"
+      >
+        {{item.label}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{isEmpty}}" class="empty-state">
+    <image class="empty-ill" src="/pages/Mission/Images/None.png" mode="aspectFit" />
+    <text class="empty-title">这里还没有回忆</text>
+    <text class="empty-subtitle">去添加第一张美照吧</text>
+    <view class="empty-btn" bindtap="onHeaderAdd">添加照片</view>
+  </view>
+
+  <view wx:else class="masonry-wrap">
+    <view class="masonry-col">
+      <view
+        wx:for="{{leftColumn}}"
+        wx:key="id"
+        class="photo-card"
+        hover-class="photo-card-hover"
+        bindtap="toDetail"
+        data-id="{{item.id}}"
+      >
+        <view class="photo-image-wrap" style="height: {{item.height}}px;">
+          <image class="photo-image" src="{{item.image}}" mode="aspectFill" />
+          <view class="photo-overlay">
+            <view class="overlay-top">
+              <text class="overlay-location">📍 {{item.location}}</text>
+              <text class="overlay-like">❤️ {{item.likes}}</text>
+            </view>
+            <text class="overlay-date">{{item.dateLabel}}</text>
+          </view>
+        </view>
+        <view class="tag-row">
+          <text
+            wx:for="{{item.tags}}"
+            wx:key="*this"
+            class="tag-pill"
+            data-tag="{{item}}"
+            catchtap="onTagTap"
+          >{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="masonry-col">
+      <view
+        wx:for="{{rightColumn}}"
+        wx:key="id"
+        class="photo-card"
+        hover-class="photo-card-hover"
+        bindtap="toDetail"
+        data-id="{{item.id}}"
+      >
+        <view class="photo-image-wrap" style="height: {{item.height}}px;">
+          <image class="photo-image" src="{{item.image}}" mode="aspectFill" />
+          <view class="photo-overlay">
+            <view class="overlay-top">
+              <text class="overlay-location">📍 {{item.location}}</text>
+              <text class="overlay-like">❤️ {{item.likes}}</text>
+            </view>
+            <text class="overlay-date">{{item.dateLabel}}</text>
+          </view>
+        </view>
+        <view class="tag-row">
+          <text
+            wx:for="{{item.tags}}"
+            wx:key="*this"
+            class="tag-pill"
+            data-tag="{{item}}"
+            catchtap="onTagTap"
+          >{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="fab" bindtap="onFabTap">+</view>
+</view>

@@ -1,0 +1,270 @@
+.photo-page {
+  min-height: 100vh;
+  background: #f7f7f7;
+  padding-bottom: 96px;
+}
+
+.top-header {
+  height: 88px;
+  padding: 40px 16px 0;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #f9b2c0 0%, #f58fa0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 18px;
+  line-height: 20px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.header-subtitle {
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.header-actions {
+  position: absolute;
+  right: 16px;
+  top: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.header-action {
+  margin-left: 12px;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.memory-card {
+  margin: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.memory-photo {
+  width: 100%;
+  height: 220px;
+  display: block;
+}
+
+.memory-info {
+  padding: 12px 14px;
+}
+
+.memory-date {
+  font-size: 13px;
+  color: #798190;
+  line-height: 18px;
+}
+
+.memory-caption {
+  margin-top: 4px;
+  font-size: 15px;
+  color: #262a31;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.tabs-scroll {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tabs-row {
+  display: inline-flex;
+  min-width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.tab-pill {
+  height: 32px;
+  padding: 0 14px;
+  margin-right: 10px;
+  border-radius: 16px;
+  background: #eceff4;
+  color: #5f6672;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-pill-active {
+  background: #f58fa0;
+  color: #ffffff;
+}
+
+.masonry-wrap {
+  margin: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.masonry-col {
+  width: calc((100% - 12px) / 2);
+}
+
+.photo-card {
+  margin-bottom: 12px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transform: scale(1);
+  opacity: 0;
+  animation: fadeIn 0.35s ease forwards;
+}
+
+.photo-card-hover {
+  transform: scale(0.98);
+}
+
+.photo-image-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.photo-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.photo-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 10px 10px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+.overlay-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overlay-location,
+.overlay-like,
+.overlay-date {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.overlay-date {
+  margin-top: 2px;
+  display: block;
+}
+
+.tag-row {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-pill {
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 0 10px;
+  height: 22px;
+  line-height: 22px;
+  border-radius: 20px;
+  font-size: 11px;
+  color: #6a7180;
+  background: #f5d9e8;
+}
+
+.tag-row .tag-pill:nth-child(2n) {
+  background: #dfe8ff;
+}
+
+.tag-row .tag-pill:nth-child(3n) {
+  background: #ece4ff;
+}
+
+.empty-state {
+  margin: 16px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-ill {
+  width: 64vw;
+  height: 22vh;
+}
+
+.empty-title {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #272b33;
+  font-weight: 600;
+}
+
+.empty-subtitle {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #8f97a2;
+}
+
+.empty-btn {
+  margin-top: 12px;
+  min-width: 120px;
+  height: 36px;
+  border-radius: 18px;
+  background: #f58fa0;
+  color: #ffffff;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab {
+  position: fixed;
+  right: 16px;
+  bottom: 96px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background: #f58fa0;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 56px;
+  text-align: center;
+  box-shadow: 0 10px 28px rgba(245, 143, 160, 0.35);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

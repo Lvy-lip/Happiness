@@ -1,0 +1,24 @@
+<view class="settings-page">
+  <view class="settings-card">
+    <view class="settings-title">任务设置</view>
+    <view class="settings-row" bindtap="pickDefaultFilter">
+      <text>默认筛选</text>
+      <view class="settings-right">
+        <text class="settings-value">{{defaultFilterLabel}}</text>
+        <text class="settings-arrow">›</text>
+      </view>
+    </view>
+    <view class="settings-row" bindtap="pickDefaultSort">
+      <text>默认排序</text>
+      <view class="settings-right">
+        <text class="settings-value">{{defaultSortLabel}}</text>
+        <text class="settings-arrow">›</text>
+      </view>
+    </view>
+    <view class="settings-row">
+      <text>完成提示</text>
+      <switch color="#ff8fae" checked="{{showCompleteToast}}" bindchange="onCompleteToastChange" />
+    </view>
+    <view class="settings-hint">设置会自动保存，并在任务中心下次进入时生效。</view>
+  </view>
+</view>

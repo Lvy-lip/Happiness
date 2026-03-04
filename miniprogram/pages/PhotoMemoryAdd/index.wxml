@@ -1,0 +1,31 @@
+<view class="memory-add-page">
+  <view class="memory-add-card">
+    <view class="field">
+      <text class="label">地点</text>
+      <input class="input" placeholder="例如：上海" value="{{location}}" bindinput="onLocationInput" />
+    </view>
+
+    <view class="field">
+      <text class="label">回忆文案</text>
+      <textarea class="textarea" maxlength="80" placeholder="写下一句想记住的话..." value="{{caption}}" bindinput="onCaptionInput" />
+    </view>
+
+    <view class="field">
+      <text class="label">标签</text>
+      <picker mode="selector" range="{{tagOptions}}" value="{{tagIndex}}" bindchange="onTagChange">
+        <view class="picker">{{tagOptions[tagIndex]}}</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="label">封面图片（可选）</text>
+      <view class="pick-row">
+        <view class="pick-btn" data-source="camera" bindtap="pickImage">拍照</view>
+        <view class="pick-btn" data-source="album" bindtap="pickImage">相册</view>
+      </view>
+      <image wx:if="{{image}}" class="preview" src="{{image}}" mode="aspectFill" />
+    </view>
+
+    <view class="submit-btn" bindtap="submitMemory">保存回忆</view>
+  </view>
+</view>

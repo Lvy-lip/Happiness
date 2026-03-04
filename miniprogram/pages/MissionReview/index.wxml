@@ -1,0 +1,7 @@
+<view class="review-page">
+  <view class="review-card">
+    <view class="review-title">{{pageTitle}}</view>
+    <view class="review-subtitle">记录今天完成了什么、哪些还可优化，后续可接入正式复盘表单。</view>
+    <view class="review-action" bindtap="goMission">返回任务中心</view>
+  </view>
+</view>
