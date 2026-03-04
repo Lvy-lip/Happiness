@@ -1,0 +1,9 @@
+.title{font-weight:600;color:#70576b;margin-bottom:14rpx}
+.todo-input{background:#fff5fa;border-radius:16rpx;padding:16rpx;margin-bottom:16rpx}
+.type-row{display:flex;gap:12rpx;margin-bottom:16rpx}
+.type-btn{background:#ffe8f3;color:#ac7897;border-radius:999rpx}
+.type-btn.active{background:#ff8fbd;color:#fff}
+.todo-item{display:flex;align-items:center;gap:10rpx;padding:12rpx 0;border-bottom:1rpx solid #f7e7f0}
+.todo-text{flex:1;color:#745f6f}
+.todo-text.done{text-decoration:line-through;color:#b7a4b0}
+.todo-points{color:#ff73ad;font-size:22rpx}

@@ -1,0 +1,7 @@
+.point-head{display:flex;justify-content:space-between;align-items:center;color:#7d6674}
+.point{font-size:40rpx;color:#ff73ad;font-weight:700}
+.product-row{display:flex;justify-content:space-between;gap:14rpx;align-items:center}
+.name{font-weight:600;color:#725c69}
+.desc{font-size:22rpx;color:#ad95a3;margin-top:6rpx}
+.price{color:#ff73ad;display:block;margin-bottom:10rpx}
+.right{text-align:right}

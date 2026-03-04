@@ -1,0 +1,22 @@
+<view class="chiikawa-page">
+  <view class="cute-card">
+    <view class="title">🫶 情感记录</view>
+    <textarea class="emo-input" placeholder="写下今天的甜甜心情..." value="{{content}}" bindinput="onInput"></textarea>
+    <view class="img-list">
+      <image wx:for="{{tempImages}}" wx:key="*this" src="{{item}}" mode="aspectFill" class="thumb" bindtap="previewTemp" data-src="{{item}}"></image>
+    </view>
+    <view class="btn-row">
+      <button size="mini" bindtap="chooseImages">选图</button>
+      <button class="chiikawa-btn" size="mini" bindtap="submitEmotion">保存</button>
+    </view>
+  </view>
+
+  <view class="cute-card" wx:for="{{emotionList}}" wx:for-item="record" wx:key="_id">
+    <view class="timeline-dot"></view>
+    <view class="time">{{record.timeText}}</view>
+    <view class="text">{{record.content}}</view>
+    <view class="img-grid">
+      <image wx:for="{{record.images}}" wx:for-item="img" wx:key="*this" src="{{img}}" mode="aspectFill" class="thumb" bindtap="previewCloud" data-list="{{record.images}}" data-src="{{img}}"></image>
+    </view>
+  </view>
+</view>

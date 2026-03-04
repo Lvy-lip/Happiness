@@ -1,0 +1,19 @@
+<view class="chiikawa-page">
+  <view class="cute-card point-head">
+    <text>🎀 可用积分</text>
+    <text class="point">{{points}}</text>
+  </view>
+
+  <view class="cute-card" wx:for="{{products}}" wx:key="_id">
+    <view class="product-row">
+      <view>
+        <view class="name">{{item.name}}</view>
+        <view class="desc">{{item.description}}</view>
+      </view>
+      <view class="right">
+        <text class="price">{{item.price}} 积分</text>
+        <button size="mini" class="chiikawa-btn" data-id="{{item._id}}" bindtap="buy">兑换</button>
+      </view>
+    </view>
+  </view>
+</view>
