@@ -20,10 +20,12 @@ Page({
         name: 'getHomeStats',
         data: { coupleId: this.data.coupleId }
       });
+      const result = res && res.result ? res.result : {};
+      const nextBanners = result.banners && result.banners.length ? result.banners : this.data.banners;
       this.setData({
-        banners: res.result.banners?.length ? res.result.banners : this.data.banners,
-        weeklyStats: res.result.weeklyStats || [],
-        points: res.result.points || 0
+        banners: nextBanners,
+        weeklyStats: result.weeklyStats || [],
+        points: result.points || 0
       });
     } catch (e) {
       wx.showToast({ title: '首页加载失败', icon: 'none' });

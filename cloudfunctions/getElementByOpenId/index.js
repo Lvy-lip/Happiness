@@ -8,6 +8,14 @@ const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async (context) => {
+  if (!context || !context.list) {
+    return {
+      errCode: 'INVALID_COLLECTION',
+      errMsg: 'Collection name is required',
+      data: []
+    }
+  }
+
   // 根据待办的 _openid 找到并返回
   return await db.collection(context.list).where({
     _openid: context._openid

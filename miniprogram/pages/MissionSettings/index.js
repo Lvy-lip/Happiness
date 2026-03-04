@@ -31,8 +31,10 @@ Page({
 		const defaultFilter = filterKeys.includes(settings.defaultFilter) ? settings.defaultFilter : 'all'
 		const defaultSort = sortKeys.includes(settings.defaultSort) ? settings.defaultSort : 'default'
 		const showCompleteToast = typeof settings.showCompleteToast === 'boolean' ? settings.showCompleteToast : true
-		const filterLabel = this.data.filterOptions.find(item => item.key === defaultFilter)?.label || '全部'
-		const sortLabel = this.data.sortOptions.find(item => item.key === defaultSort)?.label || '默认'
+		const filterTarget = this.data.filterOptions.find(item => item.key === defaultFilter)
+		const sortTarget = this.data.sortOptions.find(item => item.key === defaultSort)
+		const filterLabel = filterTarget ? filterTarget.label : '全部'
+		const sortLabel = sortTarget ? sortTarget.label : '默认'
 
 		this.setData({
 			defaultFilter,

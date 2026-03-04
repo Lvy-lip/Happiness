@@ -9,19 +9,25 @@ App({
 
       //记录使用者的名字
       userA: '鸡毛',
-      userB: '圈圈',
+      userB: '小白',
 
       // Chiikawa 主题情侣成长系统配置
       defaultCoupleId: 'solo-default-couple',
       collections: {
-        users: 'users',
+        users: 'UserList',
         couples: 'couples',
-        todos: 'todos',
+        todos: 'MissionList',
         emotions: 'emotions',
-        products: 'products',
-        orders: 'orders',
+        products: 'MarketList',
+        orders: 'StorageList',
         bannerImages: 'banner_images'
       },
+
+      // 兼容旧版页面字段（避免 cloud function 的 list 为空）
+      collectionUserList: 'UserList',
+      collectionMissionList: 'MissionList',
+      collectionMarketList: 'MarketList',
+      collectionStorageList: 'StorageList',
 
       //最多单次交易积分
       maxCredit: 500,

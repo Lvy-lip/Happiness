@@ -22,38 +22,44 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ff99aa",
-    "navigationBarTitleText": "鸡毛与小白",
+    "navigationBarTitleText": "\u9e21\u6bdb\u4e0e\u5c0f\u767d",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#1a1a1a",
     "selectedColor": "#ff99aa",
-    "list": [{
-      "pagePath": "pages/MainPage/index",
-      "selectedIconPath": "images/TabBar/HomeIconColor.jpg",
-      "iconPath": "images/TabBar/HomeIconGrey.jpg",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/Mission/index",
-      "selectedIconPath": "images/TabBar/MissionIconColor.jpg",
-      "iconPath": "images/TabBar/MissionIconGrey.jpg",
-      "text": "任务"
-    },{
-      "pagePath": "pages/Market/index",
-      "selectedIconPath": "images/TabBar/MarketIconColor.jpg",
-      "iconPath": "images/TabBar/MarketIconGrey.jpg",
-      "text": "商城"
-    },{
-      "pagePath": "pages/PhotoGallery/index",
-      "selectedIconPath": "images/TabBar/AccountIconColor.jpg",
-      "iconPath": "images/TabBar/AccountIconGrey.jpg",
-      "text": "回忆馆"
-    },{
-      "pagePath": "pages/Account/index",
-      "selectedIconPath": "images/TabBar/AccountIconColor.jpg",
-      "iconPath": "images/TabBar/AccountIconGrey.jpg",
-      "text": "仓库"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/MainPage/index",
+        "selectedIconPath": "images/TabBar/HomeIconColor.jpg",
+        "iconPath": "images/TabBar/HomeIconGrey.jpg",
+        "text": "\u9996\u9875"
+      },
+      {
+        "pagePath": "pages/Mission/index",
+        "selectedIconPath": "images/TabBar/MissionIconColor.jpg",
+        "iconPath": "images/TabBar/MissionIconGrey.jpg",
+        "text": "\u4efb\u52a1"
+      },
+      {
+        "pagePath": "pages/Market/index",
+        "selectedIconPath": "images/TabBar/MarketIconColor.jpg",
+        "iconPath": "images/TabBar/MarketIconGrey.jpg",
+        "text": "\u5546\u57ce"
+      },
+      {
+        "pagePath": "pages/PhotoGallery/index",
+        "selectedIconPath": "images/TabBar/AccountIconColor.jpg",
+        "iconPath": "images/TabBar/AccountIconGrey.jpg",
+        "text": "\u56de\u5fc6\u9986"
+      },
+      {
+        "pagePath": "pages/Account/index",
+        "selectedIconPath": "images/TabBar/AccountIconColor.jpg",
+        "iconPath": "images/TabBar/AccountIconGrey.jpg",
+        "text": "\u4ed3\u5e93"
+      }
+    ]
   },
   "lazyCodeLoading": "requiredComponents",
   "cloud": true,

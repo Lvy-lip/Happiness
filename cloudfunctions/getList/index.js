@@ -8,5 +8,13 @@ const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async (context) => {
+  if (!context || !context.list) {
+    return {
+      errCode: 'INVALID_COLLECTION',
+      errMsg: 'Collection name is required',
+      data: []
+    }
+  }
+
   return await db.collection(context.list).get()
 }
