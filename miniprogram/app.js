@@ -11,11 +11,17 @@ App({
       userA: '鸡毛',
       userB: '小白',
 
-      //用于存储待办记录的集合名称
-      collectionMissionList: 'MissionList',
-      collectionMarketList: 'MarketList',
-      collectionStorageList: 'StorageList',
-      collectionUserList: 'UserList',
+      // Chiikawa 主题情侣成长系统配置
+      defaultCoupleId: 'solo-default-couple',
+      collections: {
+        users: 'users',
+        couples: 'couples',
+        todos: 'todos',
+        emotions: 'emotions',
+        products: 'products',
+        orders: 'orders',
+        bannerImages: 'banner_images'
+      },
 
       //最多单次交易积分
       maxCredit: 500,

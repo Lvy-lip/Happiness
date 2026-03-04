@@ -1,0 +1,37 @@
+<view class="chiikawa-page">
+  <view class="cute-card">
+    <view class="title">📚 新增 Todo</view>
+    <input class="todo-input" placeholder="写下今天想一起完成的事..." value="{{todoTitle}}" bindinput="onInput" />
+    <view class="type-row">
+      <button size="mini" class="type-btn {{todoType==='daily'?'active':''}}" data-type="daily" bindtap="switchType">每天固定</button>
+      <button size="mini" class="type-btn {{todoType==='today'?'active':''}}" data-type="today" bindtap="switchType">今天的todo</button>
+    </view>
+    <button class="chiikawa-btn" bindtap="addTodo">添加</button>
+  </view>
+
+  <view class="cute-card">
+    <view class="title">🧸 每天固定 todo</view>
+    <block wx:for="{{dailyTodos}}" wx:key="_id">
+      <view class="todo-item">
+        <switch checked="{{item.completed}}" color="#ff8fbd" data-id="{{item._id}}" bindchange="toggleTodo"/>
+        <text class="todo-text {{item.completed?'done':''}}">{{item.title}}</text>
+        <text class="todo-points">+{{item.points}}</text>
+        <button size="mini" data-id="{{item._id}}" bindtap="editTodo">改</button>
+        <button size="mini" data-id="{{item._id}}" bindtap="deleteTodo">删</button>
+      </view>
+    </block>
+  </view>
+
+  <view class="cute-card">
+    <view class="title">🌈 今天的 todo</view>
+    <block wx:for="{{todayTodos}}" wx:key="_id">
+      <view class="todo-item">
+        <switch checked="{{item.completed}}" color="#ff8fbd" data-id="{{item._id}}" bindchange="toggleTodo"/>
+        <text class="todo-text {{item.completed?'done':''}}">{{item.title}}</text>
+        <text class="todo-points">+{{item.points}}</text>
+        <button size="mini" data-id="{{item._id}}" bindtap="editTodo">改</button>
+        <button size="mini" data-id="{{item._id}}" bindtap="deleteTodo">删</button>
+      </view>
+    </block>
+  </view>
+</view>
