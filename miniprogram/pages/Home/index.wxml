@@ -1,0 +1,28 @@
+<view class="chiikawa-page">
+  <view class="cute-card">
+    <view class="sticker">💗 Chiikawa 轮播</view>
+    <swiper class="banner-swiper" indicator-dots autoplay circular interval="3000">
+      <swiper-item wx:for="{{banners}}" wx:key="index">
+        <image class="banner-image" src="{{item.url}}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="cute-card">
+    <view class="title">最近7天学习完成</view>
+    <view class="week-grid">
+      <view class="day-item" wx:for="{{weeklyStats}}" wx:key="date">
+        <text class="day-label">{{item.label}}</text>
+        <text class="day-rate">{{item.completed}}/{{item.total}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="cute-card">
+    <view class="title">情侣积分</view>
+    <view class="point-row">
+      <text>当前积分：</text>
+      <text class="point-value">{{points}}</text>
+    </view>
+  </view>
+</view>
