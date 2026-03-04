@@ -1,0 +1,8 @@
+.title{font-weight:600;color:#70576b;margin-bottom:14rpx}
+.emo-input{background:#fff5fa;border-radius:16rpx;padding:16rpx;min-height:140rpx;width:100%;box-sizing:border-box}
+.btn-row{display:flex;justify-content:space-between;margin-top:14rpx}
+.img-list,.img-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10rpx;margin-top:12rpx}
+.thumb{width:100%;height:180rpx;border-radius:14rpx}
+.time{color:#ba9caf;font-size:22rpx}
+.text{margin-top:8rpx;color:#6f5b68}
+.timeline-dot{width:14rpx;height:14rpx;border-radius:50%;background:#ff8fbd;margin-bottom:8rpx}
