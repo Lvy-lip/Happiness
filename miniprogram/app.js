@@ -8,8 +8,8 @@ App({
       _openidB: 'onsgK5Zc7t-bFdnFk3_krqdIRZYY',
 
       //记录使用者的名字
-      userA: '卡比',
-      userB: '瓦豆',
+      userA: '鸡毛',
+      userB: '小白',
 
       //用于存储待办记录的集合名称
       collectionMissionList: 'MissionList',
